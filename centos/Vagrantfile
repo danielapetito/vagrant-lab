@@ -1,5 +1,5 @@
-BOX_IMAGE = "ubuntu/focal64"
-#BOX_IMAGE = "debian/stretch64"
+BOX_IMAGE = "centos/7"
+#
 Vagrant.configure("2") do |config|
   config.vm.define "ansible_server" do |ansible_server|
     ansible_server.vm.box = BOX_IMAGE
@@ -24,7 +24,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", inline: <<-SHELL
     sudo sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config
     systemctl restart sshd  
-    sudo apt-get update && apt-get install vim wget curl net-tools htop nmap openssh-server -y
+    sudo yum -y update && yum -y install vim wget curl net-tools htop nmap openssh-server
    
     SHELL
  end 
