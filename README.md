@@ -13,12 +13,12 @@ Utilizo os seguintes Vagrantfiles para poder agilizar no processo de validação
 Cada arquivo realiza uso de determinado S.O. de preferência. Sendo CentOS, Ubuntu ou Debian.
 <br>
 <br>
-Para Download da versão: https://releases.hashicorp.com/vagrant/2.2.14/vagrant_2.2.14_x86_64.deb
+Realize o download da versão em uso: https://releases.hashicorp.com/vagrant/2.2.14/vagrant_2.2.14_x86_64.deb
 
 Após o clone do repositório, para subir as máquinas virtuais é necessário ter o virtualbox instalado.
 <br>
 <br>
-- Inicie as máquinas aplicando o comando: <code>vagrant up</code> dentro do diretório clonado.
+- Inicie as máquinas aplicando o comando: <code>vagrant up</code> , dentro do diretório clonado.
 
 - Para o desligamento de todas a máquinas execute o comando: <code> vagrant halt</code>
 
