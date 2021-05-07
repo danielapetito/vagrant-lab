@@ -19,10 +19,9 @@ Após o clone do repositório, para subir as máquinas virtuais é necessário t
 <br>
 <br>
 - Inicie as máquinas aplicando o comando: <code>vagrant up</code> dentro do diretório clonado.
-<br>
-<br>
+
 - Para o desligamento de todas a máquinas execute o comando: <code> vagrant halt</code>
-<br>
-<br>
+
 - Para remoção das máquinas virtuais: <code> vagrant destroy</code>
+
 - Consulte mais comandos: <code>vagrant --help</code>
