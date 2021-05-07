@@ -5,12 +5,12 @@
 
 Versão do vagrant utilizada: **2.2.14**
 
-Utilizo os seguintes Vagrantfiles para poder agilizar no processo de validação de ambientes e configurações.
+Utilizo os seguintes Vagrantfiles para poder agilizar no processo de validação/configuração de ambientes. Nesse arquivo é iniciado múltiplas vm's.
 <br>
 <br>
 <br>
 <br>
-Cada arquivo realiza uso de determinado S.O. de preferência. Sendo CentOS, Ubuntu ou Debian.
+Cada arquivo realiza o uso de determinado S.O. de preferência. Sendo o CentOS, Ubuntu ou Debian.
 <br>
 <br>
 Realize o download da versão em uso: https://releases.hashicorp.com/vagrant/2.2.14/vagrant_2.2.14_x86_64.deb
