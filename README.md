@@ -8,8 +8,6 @@ Versão do vagrant utilizada: **2.2.14**
 Utilizo os seguintes Vagrantfiles para poder agilizar no processo de validação/configuração de ambientes. Nesse arquivo é iniciado múltiplas vm's.
 <br>
 <br>
-<br>
-<br>
 Cada arquivo realiza o uso de determinado S.O. de preferência. Sendo o CentOS, Ubuntu ou Debian.
 <br>
 <br>
