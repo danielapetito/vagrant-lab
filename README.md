@@ -18,6 +18,10 @@ Realize o download da versão em uso: https://releases.hashicorp.com/vagrant/2.2
 Após o clone do repositório, para subir as máquinas virtuais é necessário ter o virtualbox instalado.
 <br>
 <br>
+Obs: Lembre-se de alterar o ip para a faixa da rede a que você pertence e também para a interface de rede do dispositivo em que foi montado o lab.
+<br>
+<br>
+
 - Inicie as máquinas aplicando o comando: <code>vagrant up</code> , dentro do diretório clonado.
 
 - Para o desligamento de todas a máquinas execute o comando: <code> vagrant halt</code>
