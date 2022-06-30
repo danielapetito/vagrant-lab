@@ -1,33 +1,22 @@
 BOX_IMAGE = "ubuntu/focal64"
 #BOX_IMAGE = "debian/stretch64"
-GATEWAY_NETWORK = "192.168.0.1"
-INTERFACE_NETWORK = "enp4s0"
+GATEWAY_NETWORK = "192.168.15.1"
+#rede cabo
+INTERFACE_NETWORK = "`ifconfig  | grep ^en | awk -F: '{print $1}'`"
+#rede wifi
+#INTERFACE_NETWORK = "wlp0s20f3"  #wifi
 
 Vagrant.configure("2") do |config|
-  config.vm.define "ansible_server" do |ansible_server|
-    ansible_server.vm.box = BOX_IMAGE
-    ansible_server.vm.hostname = "ansible-server"
-    ansible_server.vm.network "public_network", ip: "192.168.0.50", bridge: INTERFACE_NETWORK
-  
-  
+  config.vm.define "k3s_01" do | k3s_01|
+    k3s_01.vm.box = BOX_IMAGE
+    k3s_01.vm.hostname = "k3s-01"
+    k3s_01.vm.network "public_network", ip: "192.168.15.50", bridge: INTERFACE_NETWORK
   end
-  config.vm.define "ansible_vm_01" do |ansible_vm_01|
-    ansible_vm_01.vm.box = BOX_IMAGE
-    ansible_vm_01.vm.hostname = "ansible-vm-01"
-    ansible_vm_01.vm.network "public_network", ip: "192.168.0.51", bridge: INTERFACE_NETWORK
-  
 
-  end
-  config.vm.define "ansible_vm_02" do |ansible_vm_02|
-    ansible_vm_02.vm.box = BOX_IMAGE
-    ansible_vm_02.vm.hostname = "ansible-vm-02"
-    ansible_vm_02.vm.network "public_network", ip: "192.168.0.52", bridge: INTERFACE_NETWORK
-  end
   config.vm.provider "virtualbox" do |vb|
-  vb.memory = "2048"
-  vb.cpus = 2
-  
-  
+  vb.memory = "8192"
+  vb.cpus = 4
+
   config.vm.provision "shell", inline: <<-SHELL
     sudo sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config
     systemctl restart sshd  
@@ -36,7 +25,5 @@ Vagrant.configure("2") do |config|
     sudo route add default gw #{GATEWAY_NETWORK}
     SHELL
 
- 
-  
  end
 end
